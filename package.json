@@ -1,5 +1,5 @@
 {
-  "name": "tahuisi-frontend",
+  "name": "tahuisi-web",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,11 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.2",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
+    "@astrojs/svelte": "^7.2.4",
     "astro": "^5.16.6",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "svelte": "^5.46.1",
+    "typescript": "^5.9.3"
   }
 }
