@@ -1,8 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Welcome from "@features/index/components/Welcome";
+import Slider from "@features/index/components/Slider"
 ---
 
 <Layout title="Home">
   <Welcome />
+  <Slider client:idle />
 </Layout>
