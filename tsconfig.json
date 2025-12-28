@@ -12,11 +12,17 @@
       "@root/*": [
         "./*"
       ],
-      "@features/*": [
-        "./src/features/*"
+      "@assets/*": [
+        "./src/assets/*"
       ],
       "@components/*": [
         "./src/components/*"
+      ],
+      "@data/*": [
+        "./src/data/*"
+      ],
+      "@features/*": [
+        "./src/features/*"
       ],
       "@layouts/*": [
         "./src/layouts/*"

@@ -1,22 +1,31 @@
+---
+import Navbar from "@components/Navbar.tsx";
+import { ClientRouter } from "astro:transitions";
+import items from "@data/navbar_items.json";
+import "@styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title = "Page" } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Tahu Isi</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Tahu Isi</title>
+    <ClientRouter />
+  </head>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+  <body>
+    <Navbar items={items} client:load transition:persist />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

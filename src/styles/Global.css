@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@font-face {
+  font-display: swap;
+  font-family: "Allerta";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Allerta-Regular.ttf") format("ttf");
+}
+
+html {
+  font-family: "Allerta", sans-serif;
+}
