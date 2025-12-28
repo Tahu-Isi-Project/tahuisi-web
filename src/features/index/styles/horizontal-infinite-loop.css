@@ -1,0 +1,33 @@
+:root {
+    --horizontal-infinite-loop: 20s;
+}
+
+@layer components {
+    .tahu-isi-scroll-1 {
+        animation: var(--horizontal-infinite-loop) linear 0s infinite tahuIsiScrollAnimation1;
+    }
+
+    .tahu-isi-scroll-2 {
+        animation: var(--horizontal-infinite-loop) linear 0s infinite tahuIsiScrollAnimation2;
+    }
+
+    @keyframes tahuIsiScrollAnimation1 {
+        from {
+            left: -100vw;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @keyframes tahuIsiScrollAnimation2 {
+        from {
+            left: 0vw;
+        }
+
+        to {
+            left: 100vw;
+        }
+    }
+}
