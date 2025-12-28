@@ -1,11 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Slider from "@features/index/components/Slider"
 import HeroSection from "@features/index/components/HeroSection";
 import AboutSection from "@features/index/components/AboutSection";
 
 ---
 
 <Layout title="Home">
+  <Slider client:idle />
   <HeroSection />
   <AboutSection />
 </Layout>
