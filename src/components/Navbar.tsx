@@ -15,6 +15,27 @@ interface NavItemProps {
 
 const hamburgerIconPath = "/hamburger_menu.svg";
 
+const subLinks = (item: NavbarItem, isExpanded: boolean) => {
+  return (
+    <ul
+      className={`ml-4 overflow-hidden transition-all duration-300 ease-in-out ${
+        isExpanded ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0"
+      } space-y-2`}
+    >
+      {item.links?.map((link, idx) => (
+        <li key={idx}>
+          <a
+            href={`${item.root}${link.link}`}
+            className="block text-gray-300 hover:text-white transition-colors"
+          >
+            {link.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -35,27 +56,16 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
         >
           {item.title}
         </a>
+        {item.links && <span className="text-white text-sm ml-2" />}
       </div>
-      {item.links && isExpanded && (
-        <ul className="ml-4 mt-2 space-y-2">
-          {item.links.map((link, idx) => (
-            <li key={idx}>
-              <a
-                href={`${item.root}${link.link}`}
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      {item.links && subLinks(item, isExpanded)}
     </li>
   );
 };
 
 const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <nav>
       <button

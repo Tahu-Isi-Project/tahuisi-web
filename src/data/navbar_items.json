@@ -22,12 +22,12 @@
     "root": "/gallery",
     "links": [
       {
-        "title": "Cosplay",
-        "link": "/cosplay"
-      },
-      {
         "title": "Illustration",
         "link": "/illustration"
+      },
+      {
+        "title": "Cosplay",
+        "link": "/cosplay"
       },
       {
         "title": "Music",
