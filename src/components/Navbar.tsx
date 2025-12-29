@@ -15,6 +15,27 @@ interface NavItemProps {
 
 const hamburgerIconPath = "/hamburger_menu.svg";
 
+const subLinks = (item: NavbarItem, isExpanded: boolean) => {
+  return (
+    <ul
+      className={`ml-4 overflow-hidden transition-all duration-300 ease-in-out ${
+        isExpanded ? "max-h-max opacity-100 mt-2" : "max-h-0 opacity-0"
+      } space-y-2`}
+    >
+      {item.links?.map((link, idx) => (
+        <li key={idx}>
+          <a
+            href={`${item.root}${link.link}`}
+            className="flex justify-end-safe text-3xl items-center px-10 py-2 text-black hover:text-white hover:bg-[#ee6983]"
+          >
+            {link.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -27,49 +48,38 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
 
   return (
     <li className="mb-2">
-      <div className="flex justify-between items-center cursor-pointer">
-        <a
-          href={item.root}
-          onClick={handleRootClick}
-          className="text-white text-lg hover:text-gray-300 transition-colors"
-        >
+      <a
+        href={item.root}
+        onClick={handleRootClick}
+        className="group text-black flex justify-end-safe items-center w-full px-5 py-3 hover:bg-[#ee6983] h-full transition-all duration-300 ease-in-out cursor-pointer"
+      >
+        <span className="text-6xl group-hover:text-white transition-all duration-300 ease-in-out my-2">
           {item.title}
-        </a>
-      </div>
-      {item.links && isExpanded && (
-        <ul className="ml-4 mt-2 space-y-2">
-          {item.links.map((link, idx) => (
-            <li key={idx}>
-              <a
-                href={`${item.root}${link.link}`}
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+        </span>
+        {item.links && <span className="text-sm ml-2" />}
+      </a>
+      {item.links && subLinks(item, isExpanded)}
     </li>
   );
 };
 
 const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav>
       <button
-        className="fixed top-4 right-4 z-50 px-4 py-2 bg-gray-700 text-white rounded-md shadow hover:bg-gray-600 transition"
+        className="fixed top-2 right-2 z-50 p-2 m-5 bg-white text-white rounded-md shadow transition hover:bg-[#ee6983] cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src={hamburgerIconPath} />
+        <img src={hamburgerIconPath} className="scale-70" />
       </button>
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-0 right-0 h-full w-[15vw] py-20 bg-white/60 text-white transform transition-transform duration-300 ease-in-out z-40 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="p-6 space-y-4">
+        <ul className="p-6 space-y-10">
           {items.map((item, idx) => (
             <NavItem key={idx} item={item} />
           ))}

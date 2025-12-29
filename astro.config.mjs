@@ -10,4 +10,23 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  redirects: {
+    "/event": {
+      status: 308,
+      destination: "/event/news"
+    },
+    "/gallery": {
+      status: 308,
+      destination: "/gallery/illustration"
+    },
+    "/social": {
+      status: 308,
+      destination: "/"
+    },
+    "/blog": {
+      status: 308,
+      destination: "/"
+    }
+  }
 });

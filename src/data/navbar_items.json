@@ -22,12 +22,12 @@
     "root": "/gallery",
     "links": [
       {
-        "title": "Cosplay",
-        "link": "/cosplay"
-      },
-      {
         "title": "Illustration",
         "link": "/illustration"
+      },
+      {
+        "title": "Cosplay",
+        "link": "/cosplay"
       },
       {
         "title": "Music",
@@ -36,6 +36,28 @@
       {
         "title": "Comic",
         "link": "/comic"
+      }
+    ]
+  },
+  {
+    "title": "Social",
+    "root": "/social",
+    "links": [
+      {
+        "title": "Facebook",
+        "link": "/link-fesbuk"
+      },
+      {
+        "title": "Discord",
+        "link": "/link-discrot"
+      },
+      {
+        "title": "Instagram",
+        "link": "/link-insta"
+      },
+      {
+        "title": "YouTube",
+        "link": "/link-yutub"
       }
     ]
   }
