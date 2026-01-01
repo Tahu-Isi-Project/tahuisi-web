@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HoverableLink from "@components/HoverableLink.tsx";
 
 interface NavbarItem {
   title: string;
@@ -18,18 +19,15 @@ const hamburgerIconPath = "/hamburger_menu.svg";
 const subLinks = (item: NavbarItem, isExpanded: boolean) => {
   return (
     <ul
-      className={`ml-4 overflow-hidden transition-all duration-300 ease-in-out ${
+      className={`text-2xl ml-4 overflow-hidden transition-all duration-300 ease-in-out ${
         isExpanded ? "max-h-max opacity-100 mt-2" : "max-h-0 opacity-0"
       } space-y-2`}
     >
       {item.links?.map((link, idx) => (
         <li key={idx}>
-          <a
-            href={`${item.root}${link.link}`}
-            className="flex justify-end-safe text-3xl items-center px-10 py-2 text-black hover:text-white hover:bg-[#ee6983]"
-          >
+          <HoverableLink href={`${item.root}${link.link}`} textColor="black" textSize={5}>
             {link.title}
-          </a>
+          </HoverableLink>
         </li>
       ))}
     </ul>

@@ -1,6 +1,15 @@
 ---
-import Image from "astro/components/Image.astro"
+import Image from "astro/components/Image.astro";
 import tahuIsiLogo from "@assets/img/tahu_isi_logo.png";
+import HoverableLink from "./HoverableLink.tsx";
+import footerLinks from "@data/footer-links.json";
+
+interface FooterLinks {
+  title: string;
+  href: string;
+}
+
+const links: FooterLinks[] = footerLinks;
 ---
 
 <footer class="text-white">
@@ -9,14 +18,17 @@ import tahuIsiLogo from "@assets/img/tahu_isi_logo.png";
     <div class="flex w-[99.6vw] pt-10 h-auto justify-center">
       <Image src={tahuIsiLogo} alt="Tahu isi Logo" />
     </div>
-    <div
-      class="flex text-5xl w-screen h-auto space-x-30 justify-center"
-    >
-      <a href="/privacy-policy">Privacy Policy</a>
-      <span>|</span>
-      <a href="/terms-of-service">Terms of Service</a>
-      <span>|</span>
-      <a href="/contact-us">Contact Us</a>
+    <div class="flex w-screen h-auto space-x-4 justify-center-safe align-middle text-5xl ">
+      {
+        links.map((item, index) => (
+          <>
+            <HoverableLink href={item.href} textSize={4} hoverBackgroundColor="white">
+              {item.title}
+            </HoverableLink>
+            {index < links.length - 1 && <span>|</span>}
+          </>
+        ))
+      }
     </div>
     <div class="flex text-2xl justify-center py-5">
       © Tahu Isi Project is a derivative work of Touhou Project
