@@ -1,0 +1,53 @@
+---
+import communityLogo from "/public/img/tahu_logo.png";
+import heroVideo from "../assets/hero-bg.webm";
+
+const sideMenuList = [
+  {
+    title: "New Event",
+    link: "#",
+  },
+  {
+    title: "New Challenge",
+    link: "#",
+  },
+];
+---
+
+<section class="hero-section relative">
+  <img
+    class="absolute z-1"
+    src={communityLogo.src}
+    alt="Community Logo"
+  />
+  <div class="absolute w-full h-full z-10">
+    <aside class="top-1/2 absolute transform-[translateY(-50%)]">
+      <ul class="flex flex-col gap-6">
+        {
+          sideMenuList.map((item) => (
+            <li class="py-5 font-[Allerta] text-[40px] text-right bg-white after:bg-[#EE6983] after:w-4 relative inline-flex items-center px-6 font-semibold text-black after:content-[''] after:absolute after:top-0 after:right-0 after:h-full">
+              <a class="w-full block" href={item.link}>
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </aside>
+
+    <h1
+      class="text-[140px] pb-[4%] ml-[4%] leading-none bottom-0 max-w-315 absolute font-[LuckiestGuy] text-white text-shadow-[0_0_50px_rgba(0,0,0,0.8)] inline-block"
+    >
+      CIPTAKAN DUNIAMU DI GENSOKYO
+    </h1>
+  </div>
+  <video
+    class="relative min-h-screen min-w-[99.4vw]"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src={heroVideo} type="video/webm" />
+  </video>
+</section>
