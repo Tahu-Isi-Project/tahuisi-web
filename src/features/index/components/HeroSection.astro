@@ -1,6 +1,7 @@
 ---
 import communityLogo from "/public/img/tahu_logo.png";
 import heroVideo from "../assets/hero-bg.webm";
+import HoverableLink from "@components/HoverableLink";
 
 const sideMenuList = [
   {
@@ -15,20 +16,19 @@ const sideMenuList = [
 ---
 
 <section class="hero-section relative">
-  <img
-    class="absolute z-1"
-    src={communityLogo.src}
-    alt="Community Logo"
-  />
+  <img class="absolute z-1" src={communityLogo.src} alt="Community Logo" />
   <div class="absolute w-full h-full z-10">
     <aside class="top-1/2 absolute transform-[translateY(-50%)]">
       <ul class="flex flex-col gap-6">
         {
           sideMenuList.map((item) => (
-            <li class="py-5 font-[Allerta] text-[40px] text-right bg-white after:bg-[#EE6983] after:w-4 relative inline-flex items-center px-6 font-semibold text-black after:content-[''] after:absolute after:top-0 after:right-0 after:h-full">
-              <a class="w-full block" href={item.link}>
+            <li
+              class="py-5 font-[Allerta] text-[40px] justify-end-safe text-right bg-white after:bg-[#EE6983] after:w-4 relative 
+                inline-flex items-center px-6 font-semibold text-black after:content-[''] after:absolute after:top-0 after:right-0 after:h-full"
+            >
+              <HoverableLink href={item.link} textColor="black">
                 {item.title}
-              </a>
+              </HoverableLink>
             </li>
           ))
         }
