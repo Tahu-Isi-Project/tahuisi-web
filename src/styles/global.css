@@ -9,9 +9,18 @@
 }
 
 @font-face {
+  font-display: swap;
+  font-family: "ArgentumSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/ArgentumSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
   font-family: "LuckiestGuy";
   font-weight: 400;
-  font-style: normal;
   src: url("/fonts/LuckiestGuy-Regular.ttf") format("truetype");
 }
 
