@@ -1,11 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Welcome from "@features/index/components/Welcome";
-import AboutSection from "@features/index/components/AboutSection";
-import HeroSection from "@features/index/components/HeroSection";
+import Slider from "@features/index/components/Slider.tsx"
+import HeroSection from "@features/index/components/HeroSection.astro";
+import AboutSection from "@features/index/components/AboutSection.astro";
+
 ---
 
 <Layout title="Home">
   <HeroSection />
   <AboutSection />
+  <Slider />
 </Layout>

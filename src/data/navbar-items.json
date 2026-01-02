@@ -1,0 +1,64 @@
+[
+  {
+    "title": "Home",
+    "root": "/"
+  },
+  {
+    "title": "Event",
+    "root": "/event",
+    "links": [
+      {
+        "title": "Latest News",
+        "link": "/news"
+      },
+      {
+        "title": "Calendar",
+        "link": "/calendar"
+      }
+    ]
+  },
+  {
+    "title": "Gallery",
+    "root": "/gallery",
+    "links": [
+      {
+        "title": "Illustration",
+        "link": "/illustration"
+      },
+      {
+        "title": "Cosplay",
+        "link": "/cosplay"
+      },
+      {
+        "title": "Music",
+        "link": "/music"
+      },
+      {
+        "title": "Comic",
+        "link": "/comic"
+      }
+    ]
+  },
+  {
+    "title": "Social",
+    "root": "/social",
+    "links": [
+      {
+        "title": "Facebook",
+        "link": "/link-fesbuk"
+      },
+      {
+        "title": "Discord",
+        "link": "/link-discrot"
+      },
+      {
+        "title": "Instagram",
+        "link": "/link-insta"
+      },
+      {
+        "title": "YouTube",
+        "link": "/link-yutub"
+      }
+    ]
+  }
+]

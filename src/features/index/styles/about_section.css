@@ -1,0 +1,9 @@
+.outline-stroke {
+  -webkit-text-fill-color: #000000;
+  -webkit-text-stroke: 8px #eeeeee;
+  paint-order: stroke fill;
+}
+
+.about-section {
+  background-image: url("/img/about_bg.jpg");
+}
