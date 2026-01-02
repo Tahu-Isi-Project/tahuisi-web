@@ -30,7 +30,7 @@ const HeroSection = () => {
                     style={{
                       fontSize: "clamp(0.75rem, 0rem + 1.5625vw, 2.5rem);",
                     }}
-                    id={idx}
+                    id={`${idx}`}
                     className="w-full block"
                     href={item.link}
                   >
