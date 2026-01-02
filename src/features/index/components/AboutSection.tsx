@@ -8,11 +8,11 @@ const AboutSection = () => {
       <section className="about-section bg-cover @container relative">
         <div className="content-container py-[162px]">
           <div className="card px-[200px] py-[315px] bg-white relative z-10 rounded-[70px] mx-auto max-w-[90%] shadow-[25px_25px_40px_0px_rgba(0,0,0,0.25)]">
-            <div className="about-title-bg scale-125 top-0 left-[-10%]  w-fit h-full absolute z-[-1]">
+            <div className="about-title-bgtop-0 left-[-10%] bottom-1/2 transform-[translateY(50%)] absolute z-[-1]">
               <svg
                 width="2032"
                 height="1546"
-                className="w-full h-full"
+                className="w-full h-full max-w-[1017px]"
                 viewBox="0 0 2032 1546"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ const AboutSection = () => {
                 />
               </svg>
             </div>
-            <div className="card-wrapper flex flex-row gap-[241px]">
+            <div className="card-wrapper items-center flex flex-row gap-[241px]">
               <div className="card-title-wrapper text-end leading-[88px]">
                 <h2 className="card-title whitespace-nowrap font-[LuckiestGuy] outline-stroke text-[72px]">
                   TAHU ISI
