@@ -10,7 +10,9 @@ export default defineConfig({
   output: "server",
 
   adapter: vercel({
-    isr: true,
+    isr: {
+      bypassToken: process.env.VERCEL_BYPASS_TOKEN
+    }
   }),
 
   integrations: [react()],
