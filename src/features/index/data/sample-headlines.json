@@ -1,14 +1,14 @@
 [
   {
-    "title": "Ambatukam1",
-    "slug": "",
+    "title": "An article",
+    "slug": "tes",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "thumbnailSrc": "/img/sample_poster/gambar1.png",
-    "thumbnailAlt": "Ambatukam1"
+    "thumbnailSrc": "/img/sample_poster/thumbnail1.png",
+    "thumbnailAlt": "A"
   },
   {
     "title": "Ambatukam2",
-    "slug": "",
+    "slug": "tes2",
     "excerpt": "aoekfoaiejwiun",
     "thumbnailSrc": "/img/sample_poster/gambar2.png",
     "thumbnailAlt": "Ambatukam2"

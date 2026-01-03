@@ -23,9 +23,9 @@ const { title = "Page" } = Astro.props;
     <ClientRouter />
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Navbar items={items} client:load transition:persist />
-    <main>
+    <main class="grow">
       <slot />
     </main>
     <Footer transition:persist />
