@@ -11,7 +11,8 @@ export default defineConfig({
 
   adapter: vercel({
     isr: {
-      bypassToken: process.env.VERCEL_BYPASS_TOKEN
+      bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+      expiration: false
     }
   }),
 
@@ -24,7 +25,7 @@ export default defineConfig({
   redirects: {
     "/event": {
       status: 308,
-      destination: "/event/news",
+      destination: "/",
     },
     "/gallery": {
       status: 308,
