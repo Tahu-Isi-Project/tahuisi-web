@@ -1,6 +1,6 @@
 ---
 import communityLogo from "/public/img/tahu_logo.png";
-import heroVideo from "../assets/hero-bg.webm";
+import heroBanner from "../assets/hero_banner.jpg";
 import HoverableLink from "@components/HoverableLink";
 
 const sideMenuList = [
@@ -16,8 +16,10 @@ const sideMenuList = [
 ---
 
 <section class="hero-section w-full h-screen relative overflow-hidden">
-  <img class="absolute z-1" src={communityLogo.src} alt="Community Logo" />
-  <div class="absolute w-full h-full z-10">
+  <img class="relative min-h-screen min-w-screen" src={heroBanner.src}>
+  </img>
+  <img class="absolute top-0" src={communityLogo.src} alt="Community Logo" />
+  <div class="absolute top-0 w-full h-full">
     <aside class="top-1/2 absolute transform-[translateY(-50%)]">
       <ul class="flex flex-col gap-6">
         {
@@ -42,13 +44,4 @@ const sideMenuList = [
       CIPTAKAN DUNIAMU DI GENSOKYO
     </h1>
   </div>
-  <video
-    class="relative min-h-screen min-w-screen"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src={heroVideo} type="video/webm" />
-  </video>
 </section>

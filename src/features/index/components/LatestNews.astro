@@ -1,5 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
+import { IconCaretLeftFilled, IconCaretRightFilled } from "@tabler/icons-react";
 
 export type NewsHeadline = {
   title: string;
@@ -16,23 +17,26 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="latest-news font-[ArgentumSans] mx-[5vw] my-10 text-black">
-  <div class="latest-news-title mb-8">
-    <div class="text-[3vw] font-bold">Latest News</div>
-    <div class="flex gap-1 mt-2">
-      <span class="bg-[#ee6983] h-3 w-40"></span>
-      <span class="bg-[#ffc4c4] h-3 w-40"></span>
+<section class="font-[ArgentumSans] my-10 text-black mx-auto max-w-[1445px]">
+  <div class="mb-8">
+    <div class="text-6xl font-bold">Latest News</div>
+    <div class="w-1/2">
+      <div class="flex w-full mt-4 h-3">
+        <div class="bg-[#EE6983] flex-2" />
+        <div class="bg-[#FFC4C4] flex-2" />
+        <div class="bg-[#FCF5EE] flex-6" />
+      </div>
     </div>
   </div>
 
   <div
-    class="latest-news-headlines flex flex-row gap-8 overflow-x-scroll p-4 snap-x snap-mandatory scrollbar-hide [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-gray-400 [&::-webkit-scrollbar-thumb]:rounded-lg"
+    class="flex flex-row gap-8 p-4 snap-x snap-mandatory"
   >
     {
       items.map((item) => (
         <a
           href={`/article/${item.slug}`}
-          class="block relative group h-[40vh] w-87.5 shrink-0 overflow-hidden rounded-xl hover cursor-pointer shadow-[15px_15px_30px_0px_rgba(0,0,0,0.25)]"
+          class="block relative group aspect-2/3 w-87.5 shrink-0 overflow-hidden rounded-xl hover cursor-pointer shadow-[15px_15px_30px_0px_rgba(0,0,0,0.25)]"
         >
           <Image
             src={item.thumbnailSrc}
@@ -53,5 +57,20 @@ const { items } = Astro.props;
         </a>
       ))
     }
+  </div>
+
+  <div class="flex items-center mt-8">
+    <div class="px-5">
+      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg"><IconCaretLeftFilled size={40}/></button>
+    </div>
+    <div class="px-5">
+      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg"><IconCaretRightFilled size={40}/></button>
+    </div>
+    <div class="flex-1">
+      <div class="flex w-full h-4">
+        <div class="bg-[#EE6983] w-1/5" />
+        <div class="bg-[#FFC4C4] flex-1" />
+      </div>
+    </div>
   </div>
 </section>

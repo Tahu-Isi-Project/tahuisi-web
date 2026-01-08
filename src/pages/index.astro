@@ -2,9 +2,10 @@
 import Layout from "@layouts/Layout.astro";
 import Slider from "@features/index/components/Slider.tsx";
 import HeroSection from "@features/index/components/HeroSection.astro";
-import AboutSection from "@features/index/components/AboutSection.astro";
+import AboutSection from "@features/index/components/AboutSection2.astro";
 import LatestNews from "@features/index/components/LatestNews.astro";
 import headlines from "@features/index/data/sample-headlines.json"
+import CalendarSection from "../features/index/components/CalendarSection.tsx";
 
 const sampleHeadlines = headlines;
 ---
@@ -14,4 +15,5 @@ const sampleHeadlines = headlines;
   <AboutSection />
   <Slider />
   <LatestNews items={sampleHeadlines} />
+  <CalendarSection client:load />
 </Layout>

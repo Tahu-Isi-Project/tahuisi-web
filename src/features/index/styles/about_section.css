@@ -1,6 +1,6 @@
 .outline-stroke {
   -webkit-text-fill-color: #000000;
-  -webkit-text-stroke: 8px #eeeeee;
+  -webkit-text-stroke: 8px white;
   paint-order: stroke fill;
 }
 

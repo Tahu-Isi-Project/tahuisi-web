@@ -32,6 +32,11 @@
   src: url("/fonts/McLaren-Regular.ttf") format("truetype");
 }
 
+.text-outline {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+}
+
 html {
   font-family: "Allerta", sans-serif;
 }
