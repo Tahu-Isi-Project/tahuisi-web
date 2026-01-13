@@ -1,15 +1,18 @@
 ---
 import Prose from "@root/src/features/article/components/Prose.astro";
-import type { NewsHeadline } from "@root/src/features/index/components/LatestNews.astro";
 import Layout from "@root/src/layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import { marked } from "marked";
 
 type Article = {
-  headline: NewsHeadline;
-  author: string;
-  publishDate: string;
-  editDate?: string;
+  editDate?: Date | null | undefined;
+  slug: string;
+  title: string;
+  excerpt: string;
+  thumbnailSrc: string;
+  thumbnailAlt: string;
+  authorName: string;
+  publishDate: Date;
   content: string;
 };
 
@@ -17,72 +20,73 @@ const { slug } = Astro.params;
 
 let response: Response;
 
-export const config = { isr: { expiration: false } };
-
 try {
-  response = await fetch(`${import.meta.env.DEV_URL}/api/article/${slug}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${import.meta.env.API_SECRET}`,
-      "Content-Type": "application/json",
-    },
-  });
+  response = await fetch(
+    `${import.meta.env.BACKEND_URL}/content/article/${slug}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${import.meta.env.API_SECRET}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (response.status === 404)
-    return new Response(
-      JSON.stringify({ message: `Article not found for ${slug}` }),
-      { status: 404 }
-    );
+    return new Response(JSON.stringify({ message: `Article not found for ${slug}` }), { status: 404 });
+  
 } catch {
-  return new Response(JSON.stringify({ message: "Server error" }), {
-    status: 500,
-  });
-}
-
-function formatDate(rawDate: string) {
-  const rawDateStr = new Date(rawDate);
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  }).format(rawDateStr);
+  return new Response(JSON.stringify({ message: "Server error" }), { status: 500 });
 }
 
 const article: Article = await response.json();
 
-const formattedPublishDate = formatDate(article.publishDate);
-const formattedEditDate = article.editDate ? formatDate(article.editDate) : "";
+const formattedPublishDate = new Date(article.publishDate).toLocaleDateString("id-ID");
+
+const formattedEditDate = article.editDate
+  ? new Date(article.editDate).toLocaleDateString("id-ID")
+  : "";
 
 marked.setOptions({
   breaks: true,
   gfm: true,
-  async: true
+  async: true,
 });
 
 const articleContent = await marked.parse(article.content);
+
+Astro.response.headers.append("Cache-Control", "public, max-age=604800");
+Astro.response.headers.append('Cache-Tag', `article-${slug}, all-articles`);
 ---
 
-<Layout title={article.headline.title}>
+<Layout title={article.title}>
   <article class="max-w-6xl mx-auto px-6 py-12">
     <header class="mb-12">
-      <h1 title={article.headline.title} class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
-        {article.headline.title}
+      <h1
+        title={article.title}
+        class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6"
+      >
+        {article.title}
       </h1>
 
-      <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-slate-500 border-b border-slate-200 pb-8">
+      <div
+        class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-slate-500 border-b border-slate-200 pb-8"
+      >
         <address class="not-italic font-semibold text-slate-900">
-          By {article.author}
+          By {article.authorName}
         </address>
         <span class="text-slate-300">|</span>
         <p>
-          Published: <time datetime={article.publishDate}>{formattedPublishDate}</time>
+          Published: <time datetime={formattedPublishDate}
+            >{formattedPublishDate}</time
+          >
         </p>
         {
-        article.editDate && (
+          article.editDate && (
             <>
               <span class="text-slate-300">•</span>
               <p class="italic">
-                Edited: <time datetime={article.editDate}>{formattedEditDate}</time>
+                Edited: <time datetime={formattedEditDate}>{formattedEditDate}</time>
               </p>
             </>
           )
@@ -91,8 +95,8 @@ const articleContent = await marked.parse(article.content);
 
       <div class="overflow-hidden rounded-2xl shadow-lg mb-8">
         <Image
-          src={article.headline.thumbnailSrc}
-          alt={article.headline.thumbnailAlt}
+          src={article.thumbnailSrc}
+          alt={article.thumbnailAlt}
           width={1500}
           height={300}
           class="w-full max-h-[50vh] h-auto object-cover transition-transform duration-500 hover:scale-105"

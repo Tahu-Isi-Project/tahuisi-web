@@ -3,15 +3,22 @@ import Layout from "@layouts/Layout.astro";
 import Slider from "@features/index/components/Slider.tsx";
 import HeroSection from "@features/index/components/HeroSection.astro";
 import AboutSection from "@features/index/components/AboutSection.astro";
-import LatestNews from "@features/index/components/LatestNews.astro";
-import headlines from "@features/index/data/sample-headlines.json"
+import LatestNews, { type Headline } from "@features/index/components/LatestNews.astro";
 
-const sampleHeadlines = headlines;
+const res = await fetch(`${import.meta.env.BACKEND_URL}/content/headlines`, {
+  method: "GET",
+  headers: {
+    Authorization: `Bearer ${import.meta.env.API_SECRET}`,
+    "Content-Type": "application/json",
+  },
+});
+
+const headlines: Headline[] = await res.json();
 ---
 
 <Layout title="Home">
   <HeroSection />
   <AboutSection />
   <Slider />
-  <LatestNews items={sampleHeadlines} />
+  <LatestNews items={headlines} />
 </Layout>
