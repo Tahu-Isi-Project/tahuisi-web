@@ -1,10 +1,9 @@
 ---
-import "@features/index/styles/about_section.css";
-import { IconBrandDiscordFilled, IconBrandFacebookFilled, IconBrandInstagram, IconBrandTwitterFilled, IconBrandWhatsapp, IconBrandWhatsappFilled } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandFacebookFilled, IconBrandInstagram, IconBrandTwitterFilled, IconBrandWhatsapp } from "@tabler/icons-react";
 import aboutTitle from "../assets/about_title.svg";
 import aboutBg from "../assets/about_bg.png";
-
 ---
+
 <section class="relative bg-cover h-[80vh] min-h-211" style={"background-image: url(" + aboutBg.src + ")"}>
   <div class="h-full mx-auto max-w-362 px-20 py-40">
     <div class="bg-white shadow-xl w-full h-full rounded-xl flex">
@@ -54,3 +53,15 @@ id leo efficitur, tincidunt metus et, sollicitudin turpis.
     </div>
   </div>
 </section>
+
+<style>
+  .outline-stroke {
+    -webkit-text-fill-color: #000000;
+    -webkit-text-stroke: 8px white;
+    paint-order: stroke fill;
+  }
+
+  .about-section {
+    background-image: url("/img/about_bg.jpg");
+  }
+</style>
