@@ -17,21 +17,19 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="font-[ArgentumSans] my-10 text-black mx-auto max-w-[1445px]">
+<section class="font-[ArgentumSans] my-10 text-black mx-auto max-w-362">
   <div class="mb-8">
     <div class="text-6xl font-bold">Latest News</div>
     <div class="w-1/2">
       <div class="flex w-full mt-4 h-3">
-        <div class="bg-[#EE6983] flex-2" />
-        <div class="bg-[#FFC4C4] flex-2" />
-        <div class="bg-[#FCF5EE] flex-6" />
+        <div class="bg-[#EE6983] flex-2"></div>
+        <div class="bg-[#FFC4C4] flex-2"></div>
+        <div class="bg-[#FCF5EE] flex-6"></div>
       </div>
     </div>
   </div>
 
-  <div
-    class="flex flex-row gap-8 p-4 snap-x snap-mandatory"
-  >
+  <div class="flex flex-row gap-8 p-4 snap-x snap-mandatory">
     {
       items.map((item) => (
         <a
@@ -61,15 +59,19 @@ const { items } = Astro.props;
 
   <div class="flex items-center mt-8">
     <div class="px-5">
-      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg"><IconCaretLeftFilled size={40}/></button>
+      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg">
+        <IconCaretLeftFilled size={40} />
+      </button>
     </div>
     <div class="px-5">
-      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg"><IconCaretRightFilled size={40}/></button>
+      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg">
+        <IconCaretRightFilled size={40} />
+      </button>
     </div>
     <div class="flex-1">
       <div class="flex w-full h-4">
-        <div class="bg-[#EE6983] w-1/5" />
-        <div class="bg-[#FFC4C4] flex-1" />
+        <div class="bg-[#EE6983] w-1/5"></div>
+        <div class="bg-[#FFC4C4] flex-1"></div>
       </div>
     </div>
   </div>

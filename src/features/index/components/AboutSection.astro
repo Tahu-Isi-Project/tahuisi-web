@@ -1,42 +1,55 @@
 ---
 import "@features/index/styles/about_section.css";
-const aboutTitle = "@features/index/assets/about_title.svg";
----
+import { IconBrandDiscordFilled, IconBrandFacebookFilled, IconBrandInstagram, IconBrandTwitterFilled, IconBrandWhatsapp, IconBrandWhatsappFilled } from "@tabler/icons-react";
+import aboutTitle from "../assets/about_title.svg";
+import aboutBg from "../assets/about_bg.png";
 
-<section class="about-section bg-cover h-screen @container relative">
-  <div class="content-container py-40.5">
-    <div
-      class="card px-50 py-78.75 bg-white relative z-10 rounded-[70px] mx-auto max-w-[90%] shadow-[25px_25px_40px_0px_rgba(0,0,0,0.25)]"
-    >
-      <div
-        class="about-title-bg scale-125 top-0 left-[-10%] w-fit h-full absolute z-[-1]"
-      >
-        <img src={aboutTitle} class="w-full h-full" />
-      </div>
-      <div class="card-wrapper flex flex-row gap-60.25">
-        <div class="card-title-wrapper text-end leading-22">
-          <h2
-            class="card-title whitespace-nowrap font-[LuckiestGuy] outline-stroke text-[72px]"
-          >
+---
+<section class="relative bg-cover h-[80vh] min-h-211" style={"background-image: url(" + aboutBg.src + ")"}>
+  <div class="h-full mx-auto max-w-362 px-20 py-40">
+    <div class="bg-white shadow-xl w-full h-full rounded-xl flex">
+      <img src={aboutTitle.src} class="absolute w-full h-full" style="left: -274px; top: 0" />
+      <div class="outline-stroke w-2/5 z-1 flex items-center text-center justify-center">
+        <div>
+          <div class="font-[LuckiestGuy] text-7xl">
             TAHU ISI
-          </h2>
-          <span class="font-[Mclaren] text-[40px] outline-stroke inline-block">
+          </div>
+          <div class="font-[Mclaren] text-right text-5xl">
             PROJECT
-          </span>
-        </div>
-        <div class="card-text outline-stroke text-[29px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          metus nisi, efficitur eget feugiat in, semper et metus. Mauris
-          lobortis sit amet neque at aliquet. Donec id leo efficitur, tincidunt
-          metus et, sollicitudin turpis.
+          </div>
         </div>
       </div>
-      <div
-        class="color-palette absolute mb-9.25 mr-[5%] bottom-0 flex fle-row right-0 max-w-158.25 w-full h-6.75"
-      >
-        <span class="color-palette-1 bg-[#FCF5EE] flex-6"></span>
-        <span class="color-palette-2 bg-[#FFC4C4] flex-2"></span>
-        <span class="color-palette-3 bg-[#EE6983] flex-2"></span>
+      <div class="w-3/5 z-1 pr-15 flex items-center relative text-2xl">
+        <div class="leading-15 outline-stroke">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Curabitur metus nisi, efficitur eget feugiat in, semper et 
+metus. Mauris lobortis sit amet neque at aliquet. Donec
+id leo efficitur, tincidunt metus et, sollicitudin turpis.
+          <div class="absolute text-[#EE6983] flex mt-4">
+            <a class="hover:text-white transition rounded-lg hover:bg-[#EE6983] mx-2 p-1 cursor-pointer">
+              <IconBrandDiscordFilled className="w-13" size={50} />
+            </a>
+            <a class="hover:text-white transition rounded-lg hover:bg-[#EE6983] mx-2 p-1 cursor-pointer">
+              <IconBrandInstagram className="w-13" size={50} />
+            </a>
+            <a class="hover:text-white transition rounded-lg hover:bg-[#EE6983] mx-2 p-1 cursor-pointer">
+              <IconBrandFacebookFilled className="w-13" style={{ marginLeft: -2, paddingRight: 2}} size={50} />
+            </a>
+            <a class="hover:text-white transition rounded-lg hover:bg-[#EE6983] mx-2 p-1 cursor-pointer">
+              <IconBrandWhatsapp className="w-13" size={50} />
+            </a>
+            <a class="hover:text-white transition rounded-lg hover:bg-[#EE6983] mx-2 p-1 cursor-pointer">
+              <IconBrandTwitterFilled className="w-13" size={50} />
+            </a>
+          </div>
+          <div class="w-1/2 absolute right-25 bottom-10">
+            <div class="flex w-full mt-4 h-3">
+              <div class="bg-[#FCF5EE] flex-6" />
+              <div class="bg-[#FFC4C4] flex-2" />
+              <div class="bg-[#EE6983] flex-2" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
