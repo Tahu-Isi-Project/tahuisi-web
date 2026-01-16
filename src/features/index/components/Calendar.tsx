@@ -1,7 +1,6 @@
 import { useMemo } from "react";
-import { IconCaretLeftFilled, IconCaretRightFilled, type TablerIcon } from "@tabler/icons-react";
-import IconButton from "@components/IconButton";
 import { getCalendarDays, months, daysOfWeek } from "../utils/calendar-utils";
+import ArrowButton from "@components/ArrowButton";
 
 export type CalendarEvent = {
   start: Date;
@@ -27,26 +26,17 @@ const Calendar = ({ year, month, className = "", events = [], onChange }: Calend
 
   const handleMonthChange = (offset: number) => onChange?.(new Date(year, month + offset, 1));
 
-  const ChangeMonthButton = ({ icon, offset }: { icon: TablerIcon, offset: number }) => (
-    <IconButton
-      icon={icon}
-      size={24}
-      onClick={() => handleMonthChange(offset)}
-      className="p-2 bg-white border border-slate-300 rounded-full shadow hover:bg-slate-50 transition-colors"
-    />
-  );
-
   return (
-    <div className={`inline-block min-w-[450px] ${className}`}>
+    <div className={`inline-block min-w-112.5 ${className}`}>
       <header className="flex justify-between items-center mb-8">
-        <ChangeMonthButton icon={IconCaretLeftFilled} offset={-1} />
+        <ArrowButton direction="Left" onClick={() => handleMonthChange(-1)} />
 
         <div className="flex text-2xl font-medium bg-white border border-slate-300 rounded-lg overflow-hidden">
           <span className="py-2 px-6">{months[month]}</span>
           <span className="py-2 px-6 border-l border-slate-300 bg-slate-50">{year}</span>
         </div>
 
-        <ChangeMonthButton icon={IconCaretRightFilled} offset={1} />
+        <ArrowButton direction="Right" onClick={() => handleMonthChange(1)} />
       </header>
 
       {/* Weekdays */}

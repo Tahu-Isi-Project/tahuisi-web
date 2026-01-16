@@ -1,6 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
-import { IconCaretLeftFilled, IconCaretRightFilled } from "@tabler/icons-react";
+import ArrowButton from "@components/ArrowButton";
 
 export type NewsHeadline = {
   title: string;
@@ -59,14 +59,10 @@ const { items } = Astro.props;
 
   <div class="flex items-center mt-8">
     <div class="px-5">
-      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg">
-        <IconCaretLeftFilled size={40} />
-      </button>
+      <ArrowButton size={40} direction="Left" onClick={() => {}} />
     </div>
     <div class="px-5">
-      <button class="bg-white p-2 rounded-full border border-slate-300 shadow-lg">
-        <IconCaretRightFilled size={40} />
-      </button>
+      <ArrowButton size={40} direction="Right" onClick={() => {}} />
     </div>
     <div class="flex-1">
       <div class="flex w-full h-4">
