@@ -2,6 +2,7 @@
 import communityLogo from "/public/img/tahu_logo.png";
 import heroBanner from "../assets/hero_banner.jpg";
 import HoverableLink from "@components/HoverableLink";
+import Image from "astro/components/Image.astro";
 
 const sideMenuList = [
   {
@@ -16,8 +17,13 @@ const sideMenuList = [
 ---
 
 <section class="hero-section w-full h-screen relative overflow-hidden">
-  <img class="relative min-h-screen min-w-screen" src={heroBanner.src}>
-  </img>
+  <Image
+    src={heroBanner}
+    alt="Hero banner"
+    width={1920}
+    height={1080}
+    class="relative min-h-screen min-w-screen"
+  />
   <img class="absolute top-0" src={communityLogo.src} alt="Community Logo" />
   <div class="absolute top-0 w-full h-full">
     <aside class="top-1/2 absolute transform-[translateY(-50%)]">
