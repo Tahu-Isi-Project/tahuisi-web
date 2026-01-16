@@ -1,17 +1,26 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Slider from "@features/index/components/Slider.tsx";
 import HeroSection from "@features/index/components/HeroSection.astro";
 import AboutSection from "@features/index/components/AboutSection.astro";
-import LatestNews from "@features/index/components/LatestNews.astro";
-import headlines from "@features/index/data/sample-headlines.json"
+import SliderSection from "@features/index/components/SliderSection.astro";
+import HeadlinesSection from "@features/index/components/HeadlinesSection.astro";
+import CalendarSection, { type CalendarEvent } from "@features/index/components/CalendarSection.tsx";
 
-const sampleHeadlines = headlines;
+import headlines from "@features/index/data/sample-headlines.json";
+import sampleEvents from "@features/index/data/sample-events.json";
+
+const events: CalendarEvent[] = sampleEvents.map(event => ({
+  ...event,
+  start: new Date(event.start),
+  end: new Date(event.end)
+}));
+
 ---
 
 <Layout title="Home">
   <HeroSection />
   <AboutSection />
-  <Slider />
-  <LatestNews items={sampleHeadlines} />
+  <SliderSection />
+  <HeadlinesSection headlines={headlines} />
+  <CalendarSection calendarEvents={events} client:idle />
 </Layout>

@@ -66,14 +66,8 @@ const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
 
   return (
     <nav>
-      <button
-        className="fixed top-2 right-2 z-50 p-2 m-5 bg-white text-white rounded-md shadow transition hover:bg-[#ee6983] cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <img src={hamburgerIconPath} className="scale-70" />
-      </button>
       <div
-        className={`fixed top-0 right-0 h-full w-[15vw] py-20 bg-white/60 text-white transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-0 right-0 z-2 h-full w-[15vw] py-20 bg-white/60 text-white transform transition-transform duration-300 ease-in-out  ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -83,6 +77,12 @@ const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
           ))}
         </ul>
       </div>
+      <button
+        className="fixed top-2 right-2 z-2 p-2 m-5 bg-white text-white rounded-md shadow transition hover:bg-[#ee6983] cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <img src={hamburgerIconPath} className="scale-70" />
+      </button>
     </nav>
   );
 };
