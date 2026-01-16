@@ -1,14 +1,7 @@
 import { useMemo } from "react";
-import { getCalendarDays, months, daysOfWeek } from "../utils/calendar-utils";
+import { getCalendarDays, months, daysOfWeek, getColorFromCategory } from "../utils/calendar-utils";
 import ArrowButton from "@components/ArrowButton";
-
-export type CalendarEvent = {
-  start: Date;
-  end: Date;
-  name: string;
-  color: string;
-  desc: string;
-};
+import type { CalendarEvent } from "./CalendarSection";
 
 interface CalendarProps {
   year: number;
@@ -42,10 +35,7 @@ const Calendar = ({ year, month, className = "", events = [], onChange }: Calend
       {/* Weekdays */}
       <div className="grid grid-cols-7 mb-2">
         {daysOfWeek.map((day) => (
-          <div
-            key={day}
-            className="text-center text-slate-500 font-semibold uppercase text-xs tracking-widest"
-          >
+          <div key={day} className="text-center text-slate-500 font-semibold uppercase text-xs tracking-widest">
             {day}
           </div>
         ))}
@@ -75,7 +65,7 @@ const Calendar = ({ year, month, className = "", events = [], onChange }: Calend
               <div
                 className={`
                   py-1 transition-all
-                  ${activeEvent ? `bg-${activeEvent.color}-100` : ""}
+                  ${activeEvent ? `bg-${getColorFromCategory(activeEvent.category)}-100` : ""}
                   ${isStart ? "rounded-l-lg" : ""}
                   ${isEnd ? "rounded-r-lg" : ""}
                 `}

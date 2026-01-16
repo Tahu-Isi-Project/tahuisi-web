@@ -11,15 +11,15 @@ export type NewsHeadline = {
 };
 
 interface Props {
-  items: NewsHeadline[];
+  headlines: NewsHeadline[];
 }
 
-const { items } = Astro.props;
+const { headlines } = Astro.props;
 ---
 
 <section class="font-[ArgentumSans] my-10 text-black mx-auto max-w-362">
   <div class="mb-8">
-    <div class="text-6xl font-bold">Latest News</div>
+    <div class="text-6xl font-bold">Articles</div>
     <div class="w-1/2">
       <div class="flex w-full mt-4 h-3">
         <div class="bg-[#EE6983] flex-2"></div>
@@ -31,7 +31,7 @@ const { items } = Astro.props;
 
   <div class="flex flex-row gap-8 p-4 snap-x snap-mandatory">
     {
-      items.map((item) => (
+      headlines.map((item) => (
         <a
           href={`/article/${item.slug}`}
           class="block relative group aspect-2/3 w-87.5 shrink-0 overflow-hidden rounded-xl hover cursor-pointer shadow-[15px_15px_30px_0px_rgba(0,0,0,0.25)]"

@@ -1,37 +1,37 @@
 [
   {
-    "start": "2026-5-15T12:00:00Z",
-    "end": "2026-1-15T13:00:00Z",
-    "name": "idk",
-    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl interdum, tempus justo non, egestas eros. Nulla nec porta diam. In hac habitasse platea dictumst. Morbi consequat felis nibh, id fringilla tortor venenatis eu. Nunc ornare imperdiet nisl varius imperdiet. Suspendisse urna nibh, tristique in luctus nec, pellentesque ac mi. Sed tristique venenatis euismod. Vestibulum mattis lobortis molestie. Mauris fringilla vitae mi eget hendrerit. Aliquam tincidunt lorem sit amet lorem euismod porttitor. Sed porta felis massa, mollis vehicula sem vulputate ac. Mauris imperdiet felis ac ultrices bibendum. Pellentesque et eros molestie, egestas ex et, blandit risus. Duis sed diam nisl. ",
-    "color": "red"
+    "start": "2026-01-15T12:00:00Z",
+    "end": "2026-01-15T13:00:00Z",
+    "name": "Tahu Kosong",
+    "desc": "Melawan musuh terbesar tahu isi.",
+    "category": "national"
   },
   {
-    "start": "2026-5-18T12:00:00Z",
-    "end": "2026-1-18T13:00:00Z",
+    "start": "2026-01-18T12:00:00Z",
+    "end": "2026-01-19T13:00:00Z",
     "name": "idk",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl interdum, tempus justo non, egestas eros. Nulla nec porta diam. In hac habitasse platea dictumst. Morbi consequat felis nibh, id fringilla tortor venenatis eu. Nunc ornare imperdiet nisl varius imperdiet. Suspendisse urna nibh, tristique in luctus nec, pellentesque ac mi. Sed tristique venenatis euismod. Vestibulum mattis lobortis molestie. Mauris fringilla vitae mi eget hendrerit. Aliquam tincidunt lorem sit amet lorem euismod porttitor. Sed porta felis massa, mollis vehicula sem vulputate ac. Mauris imperdiet felis ac ultrices bibendum. Pellentesque et eros molestie, egestas ex et, blandit risus. Duis sed diam nisl. ",
-    "color": "blue"
+    "category": "competition"
   },
   {
-    "start": "2026-1-19T12:00:00Z",
-    "end": "2026-1-20T12:00:00Z",
+    "start": "2026-01-19T12:00:00Z",
+    "end": "2026-01-20T12:00:00Z",
     "name": "idk",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl interdum, tempus justo non, egestas eros. Nulla nec porta diam. In hac habitasse platea dictumst. Morbi consequat felis nibh, id fringilla tortor venenatis eu. Nunc ornare imperdiet nisl varius imperdiet. Suspendisse urna nibh, tristique in luctus nec, pellentesque ac mi. Sed tristique venenatis euismod. Vestibulum mattis lobortis molestie. Mauris fringilla vitae mi eget hendrerit. Aliquam tincidunt lorem sit amet lorem euismod porttitor. Sed porta felis massa, mollis vehicula sem vulputate ac. Mauris imperdiet felis ac ultrices bibendum. Pellentesque et eros molestie, egestas ex et, blandit risus. Duis sed diam nisl. ",
-    "color": "amber"
+    "category": "competition"
   },
   {
-    "start": "2026-1-27T12:00:00Z",
-    "end": "2026-2-5T12:00:00Z",
+    "start": "2026-01-27T12:00:00Z",
+    "end": "2026-02-05T12:00:00Z",
     "name": "idk",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl interdum, tempus justo non, egestas eros. Nulla nec porta diam. In hac habitasse platea dictumst. Morbi consequat felis nibh, id fringilla tortor venenatis eu. Nunc ornare imperdiet nisl varius imperdiet. Suspendisse urna nibh, tristique in luctus nec, pellentesque ac mi. Sed tristique venenatis euismod. Vestibulum mattis lobortis molestie. Mauris fringilla vitae mi eget hendrerit. Aliquam tincidunt lorem sit amet lorem euismod porttitor. Sed porta felis massa, mollis vehicula sem vulputate ac. Mauris imperdiet felis ac ultrices bibendum. Pellentesque et eros molestie, egestas ex et, blandit risus. Duis sed diam nisl. ",
-    "color": "lime"
+    "category": "competition"
   },
   {
-    "start": "2026-2-29T12:00:00Z",
-    "end": "2026-2-30T12:00:00Z",
+    "start": "2026-02-29T12:00:00Z",
+    "end": "2026-03-30T12:00:00Z",
     "name": "idk",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl interdum, tempus justo non, egestas eros. Nulla nec porta diam. In hac habitasse platea dictumst. Morbi consequat felis nibh, id fringilla tortor venenatis eu. Nunc ornare imperdiet nisl varius imperdiet. Suspendisse urna nibh, tristique in luctus nec, pellentesque ac mi. Sed tristique venenatis euismod. Vestibulum mattis lobortis molestie. Mauris fringilla vitae mi eget hendrerit. Aliquam tincidunt lorem sit amet lorem euismod porttitor. Sed porta felis massa, mollis vehicula sem vulputate ac. Mauris imperdiet felis ac ultrices bibendum. Pellentesque et eros molestie, egestas ex et, blandit risus. Duis sed diam nisl. ",
-    "color": "lime"
+    "category": "something-else-idk"
   }
 ]
