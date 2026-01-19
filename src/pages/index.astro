@@ -5,6 +5,11 @@ import AboutSection from "@features/index/components/AboutSection.astro";
 import SliderSection from "@features/index/components/SliderSection.astro";
 import HeadlinesSection from "@features/index/components/HeadlinesSection.astro";
 import CalendarSection from "@features/index/components/CalendarSection.tsx";
+
+Astro.response.headers.set(
+  'Cache-Control', 
+  'public, maxage=30, s-maxage=2592000, stale-while-revalidate=30'
+);
 ---
 
 <Layout title="Home">
