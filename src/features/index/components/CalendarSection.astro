@@ -1,0 +1,39 @@
+---
+import Calendar from "./Calendar.tsx";
+import EventCard from "./EventCard.astro";
+import sampleEvents from "@features/index/data/sample-events.json";
+
+const calendarEvents = sampleEvents.map((event) => ({
+  ...event,
+  start: new Date(event.start),
+  end: new Date(event.end),
+}));
+
+const today = new Date();
+---
+
+<section class="mx-auto max-w-360 my-20 px-5 font-[ArgentumSans]">
+  <header class="mb-10">
+    <h1 class="text-6xl mb-4">Calendar</h1>
+    <div class="flex w-1/4 h-2 space-x-1">
+      <div class="bg-[#EE6983] flex-6"></div>
+      <div class="bg-[#FFC4C4] flex-10"></div>
+      <div class="bg-[#FCF5EE] flex-6"></div>
+    </div>
+  </header>
+
+  <div class="flex gap-20">
+    <div class="w-1/2">
+      <Calendar
+        client:visible
+        initialDate={today}
+        events={calendarEvents}
+        className="w-full"
+      />
+    </div>
+
+    <div class="w-1/2 max-h-139 overflow-y-scroll overflow-x-hidden pr-4 font-[Allerta]">
+      {calendarEvents.map((event) => <EventCard event={event} />)}
+    </div>
+  </div>
+</section>

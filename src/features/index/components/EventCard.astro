@@ -1,0 +1,20 @@
+---
+import { formatEventDateRange, getColorFromCategory } from "@features/index/utils/calendar-utils";
+
+const { event } = Astro.props;
+
+const { dayRange, monthRange } = formatEventDateRange(new Date(event.start), new Date(event.end));
+const borderStyle = getColorFromCategory(event.category) || 'border-slate-400';
+---
+
+<div class={`flex border-y border-r border-slate-300 bg-white mb-4 border-l-8 ${borderStyle}`}>
+  <div class="w-40 p-4 shrink-0 text-center">
+    <div class="text-4xl font-light">{dayRange}</div>
+    <div class="text-xl text-slate-500">{monthRange}</div>
+  </div>
+  
+  <div class="flex-1 border-l-2 p-5 border-slate-100">
+    <h3 class="text-3xl mb-2">{event.name}</h3>
+    <p class="text-slate-600 line-clamp-2">{event.desc}</p>
+  </div>
+</div>

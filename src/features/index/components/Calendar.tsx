@@ -1,34 +1,34 @@
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import { getCalendarDays, months, daysOfWeek, getColorFromCategory } from "../utils/calendar-utils";
 import ArrowButton from "@components/ArrowButton";
-import type { CalendarEvent } from "./CalendarSection";
+import type { CalendarEvent } from "../types";
 
 interface CalendarProps {
-  year: number;
-  month: number;
+  initialDate: Date;
+  events: CalendarEvent[];
   className?: string;
-  events?: CalendarEvent[];
-  onChange?: (date: Date) => void;
 }
 
-const Calendar = ({ year, month, className = "", events = [], onChange }: CalendarProps) => {
-  const calendarDays = useMemo(
-    () => getCalendarDays(year, month),
-    [year, month]
-  );
+const Calendar = ({ initialDate, events, className = "" }: CalendarProps) => {
+  const [viewDate, setViewDate] = useState(new Date(initialDate));
+  
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
 
-  const handleMonthChange = (offset: number) => onChange?.(new Date(year, month + offset, 1));
+  const calendarDays = useMemo(() => getCalendarDays(year, month), [year, month]);
+
+  const handleMonthChange = (offset: number) => {
+    setViewDate(new Date(year, month + offset, 1));
+  };
 
   return (
     <div className={`inline-block min-w-112.5 ${className}`}>
       <header className="flex justify-between items-center mb-8">
         <ArrowButton direction="Left" onClick={() => handleMonthChange(-1)} />
-
         <div className="flex text-2xl font-medium bg-white border border-slate-300 rounded-lg overflow-hidden">
           <span className="py-2 px-6">{months[month]}</span>
           <span className="py-2 px-6 border-l border-slate-300 bg-slate-50">{year}</span>
         </div>
-
         <ArrowButton direction="Right" onClick={() => handleMonthChange(1)} />
       </header>
 
