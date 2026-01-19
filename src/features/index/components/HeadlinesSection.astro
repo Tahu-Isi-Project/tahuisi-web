@@ -1,6 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import ArrowButton from "@components/ArrowButton";
+import sampleHeadlines from "@features/index/data/sample-headlines.json";
 
 export type NewsHeadline = {
   title: string;
@@ -10,11 +11,7 @@ export type NewsHeadline = {
   thumbnailAlt: string;
 };
 
-interface Props {
-  headlines: NewsHeadline[];
-}
-
-const { headlines } = Astro.props;
+const headlines: NewsHeadline[] = sampleHeadlines;
 ---
 
 <section class="font-[ArgentumSans] my-10 text-black mx-auto max-w-362">

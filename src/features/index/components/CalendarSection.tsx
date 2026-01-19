@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Calendar from "./Calendar";
 import EventCard from "./EventCard";
+import sampleEvents from "@features/index/data/sample-events.json";
 
 export type CalendarEvent = {
   start: Date;
@@ -10,7 +11,13 @@ export type CalendarEvent = {
   category: string;
 };
 
-const CalendarSection = ({ calendarEvents }: { calendarEvents: CalendarEvent[] }) => {
+const calendarEvents: CalendarEvent[] = sampleEvents.map(event => ({
+  ...event,
+  start: new Date(event.start),
+  end: new Date(event.end)
+}));
+
+const CalendarSection = () => {
   const [date, setDate] = useState(new Date());
 
   const currentMonthEvents = calendarEvents.filter(event => 
