@@ -8,7 +8,7 @@ import CalendarSection from "@features/index/components/CalendarSection.astro";
 
 Astro.response.headers.set(
   'Cache-Control', 
-  'public, maxage=30, s-maxage=2592000, stale-while-revalidate=30'
+  'public, max-age=60, s-maxage=2592000, stale-while-revalidate=60'
 );
 ---
 
