@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "dev:cf": "wrangler types && astro build && wrangler dev",
-    "build": "wrangler types && astro build",
+    "build": "astro build",
     "astro": "astro",
     "wrangler": "wrangler"
   },
