@@ -32,8 +32,8 @@ const HoverableLink: React.FC<HoverableLinkProps> = ({
     <a
       href={href}
       className={`
-        group flex justify-end-safe ${textSizeStr} ease-in-out items-center 
-        px-10 py-2 transform transition-all duration-200 
+        group flex justify-end-safe ${textSizeStr} ease-in-out 
+        items-center transform transition-all duration-200 
         ${textColors[textColor]} ${bgColors[hoverBackgroundColor]} 
         ${
           hoverBackgroundColor == "white"

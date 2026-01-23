@@ -3,7 +3,7 @@ import Navbar from "@components/Navbar.tsx";
 import Footer from "@components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import items from "@data/navbar-items.json";
-import "@styles/Global.css";
+import "@styles/global.css";
 
 export interface Props {
   title: string;
@@ -23,9 +23,9 @@ const { title = "Page" } = Astro.props;
     <ClientRouter />
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen bg-[#F7F7F7]">
     <Navbar items={items} client:load transition:persist />
-    <main>
+    <main class="grow overflow-x-hidden">
       <slot />
     </main>
     <Footer transition:persist />

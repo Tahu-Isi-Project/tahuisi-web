@@ -1,0 +1,61 @@
+---
+import SliderImage from "../assets/tahu_horizontal.png";
+import Image from "astro/components/Image.astro";
+---
+
+<div class="w-[99.4vw] h-[20vh] overflow-hidden relative">
+  <Image
+    src={SliderImage}
+    alt="Tahu Isi Slider"
+    height={1500}
+    class="absolute tahu-isi-scroll-1"
+    format="webp"
+    quality="low"
+  />
+  <Image
+    src={SliderImage}
+    alt="Tahu Isi Slider"
+    height={1500}
+    class="absolute tahu-isi-scroll-2"
+    format="webp"
+    quality="low"
+  />
+</div>
+
+<style>
+  :root {
+    --horizontal-infinite-loop: 20s;
+  }
+
+  @layer components {
+    .tahu-isi-scroll-1 {
+      animation: var(--horizontal-infinite-loop) linear 0s infinite
+        tahuIsiScrollAnimation1;
+    }
+
+    .tahu-isi-scroll-2 {
+      animation: var(--horizontal-infinite-loop) linear 0s infinite
+        tahuIsiScrollAnimation2;
+    }
+
+    @keyframes tahuIsiScrollAnimation1 {
+      from {
+        left: -100vw;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+
+    @keyframes tahuIsiScrollAnimation2 {
+      from {
+        left: 0vw;
+      }
+
+      to {
+        left: 100vw;
+      }
+    }
+  }
+</style>
