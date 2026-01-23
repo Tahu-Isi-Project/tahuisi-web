@@ -4,6 +4,8 @@ import Layout from "@root/src/layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import { marked } from "marked";
 
+export const prerender = false;
+
 type Article = {
   editDate?: Date | null | undefined;
   slug: string;
@@ -22,7 +24,7 @@ let response: Response;
 
 try {
   response = await fetch(
-    `${import.meta.env.BACKEND_URL}/content/article/${slug}`,
+    `${import.meta.env.BASE_URL}/api/${slug}`,
     {
       method: "GET",
       headers: {
@@ -34,7 +36,7 @@ try {
 
   if (response.status === 404)
     return new Response(JSON.stringify({ message: `Article not found for ${slug}` }), { status: 404 });
-  
+
 } catch {
   return new Response(JSON.stringify({ message: "Server error" }), { status: 500 });
 }
