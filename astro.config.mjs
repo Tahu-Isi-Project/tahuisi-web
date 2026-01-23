@@ -13,7 +13,8 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
       envFiles: ["./.env"]
-    }
+    },
+    imageService: 'compile'
   }),
 
   integrations: [react()],

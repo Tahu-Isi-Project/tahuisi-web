@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "dev:cf": "wrangler types && astro build && wrangler dev",
+    "dev:cf": "wrangler types && wrangler pages dev ./dist",
     "build": "astro build",
     "astro": "astro",
     "wrangler": "wrangler"
