@@ -56,15 +56,6 @@ marked.setOptions({
 });
 
 const articleContent = await marked.parse(article.content);
-
-Astro.response.headers.append(
-  'Cache-Tag', 
-  `article-${slug}, all-articles`
-);
-Astro.response.headers.append(
-  'Cache-Control', 
-  'public, maxage=60, s-maxage=2592000, stale-while-revalidate=30'
-);
 ---
 
 <Layout title={article.title}>
