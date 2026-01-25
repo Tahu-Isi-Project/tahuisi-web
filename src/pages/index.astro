@@ -7,15 +7,12 @@ import HeadlinesSection from "@features/index/components/HeadlinesSection.astro"
 import CalendarSection from "@features/index/components/CalendarSection.astro";
 
 export const prerender = true;
-
-Astro.response.headers.set('Cache-Control', 'public, s-maxage=604800, max-age=60'); 
-Astro.response.headers.set('CDN-Cache-Control', 'public, s-maxage=604800, max-age=60')
 ---
 
 <Layout title="Home">
   <HeroSection />
   <AboutSection />
   <SliderSection />
-  <HeadlinesSection server:defer />
-  <CalendarSection server:defer />
+  <HeadlinesSection />
+  <CalendarSection />
 </Layout>
