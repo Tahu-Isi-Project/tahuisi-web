@@ -5,6 +5,11 @@ import AboutSection from "@features/index/components/AboutSection.astro";
 import SliderSection from "@features/index/components/SliderSection.astro";
 import HeadlinesSection from "@features/index/components/HeadlinesSection.astro";
 import CalendarSection from "@features/index/components/CalendarSection.astro";
+
+export const prerender = true;
+
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=604800, max-age=60'); 
+Astro.response.headers.set('CDN-Cache-Control', 'public, s-maxage=604800, max-age=60')
 ---
 
 <Layout title="Home">
