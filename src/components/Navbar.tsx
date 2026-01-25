@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import HoverableLink from "@components/HoverableLink.tsx";
+import navbarItems from "@data/navbar-items.json";
 
-interface NavbarItem {
+type NavbarItem = {
   title: string;
   root: string;
   links?: {
@@ -10,7 +11,7 @@ interface NavbarItem {
   }[];
 }
 
-interface NavItemProps {
+type NavItemProps = {
   item: NavbarItem;
 }
 
@@ -61,7 +62,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
   );
 };
 
-const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -72,7 +73,7 @@ const Navbar: React.FC<{ items: NavbarItem[] }> = ({ items }) => {
         }`}
       >
         <ul className="p-6 space-y-10">
-          {items.map((item, idx) => (
+          {navbarItems.map((item, idx) => (
             <NavItem key={idx} item={item} />
           ))}
         </ul>
