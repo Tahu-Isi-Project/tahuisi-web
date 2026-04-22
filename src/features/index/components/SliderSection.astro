@@ -1,24 +1,28 @@
 ---
 import SliderImage from "../assets/tahu_horizontal.png";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 ---
 
-<div class="w-[99.4vw] h-[20vh] overflow-hidden relative">
+<div class="w-full h-60 overflow-hidden relative">
   <Image
     src={SliderImage}
     alt="Tahu Isi Slider"
-    height={1500}
-    class="absolute tahu-isi-scroll-1"
+    height={300}
+    class="absolute tahu-isi-scroll-1 w-auto"
     format="webp"
     quality="low"
+    decoding="async"
+    loading="lazy"
   />
   <Image
     src={SliderImage}
     alt="Tahu Isi Slider"
-    height={1500}
-    class="absolute tahu-isi-scroll-2"
+    height={300}
+    class="absolute tahu-isi-scroll-2 w-auto"
     format="webp"
     quality="low"
+    decoding="async"
+    loading="lazy"
   />
 </div>
 

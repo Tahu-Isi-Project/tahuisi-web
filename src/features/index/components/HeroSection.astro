@@ -20,11 +20,13 @@ const sideMenuList = [
   <Image
     src={heroBanner}
     alt="Hero banner"
-    width={1920}
-    height={1080}
+    width={1600}
+    height={900}
     class="absolute inset-0 w-full h-full object-cover"
     format="webp"
-    quality="mid"
+    quality="low"
+    decoding="async"
+    loading="lazy"
   />
   <img class="absolute top-0" src={communityLogo.src} alt="Community Logo" />
   <div class="absolute top-0 w-full h-full">
