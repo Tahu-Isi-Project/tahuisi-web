@@ -3,28 +3,28 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "wrangler types && wrangler pages dev ./dist",
+    "dev": "astro dev --host --port=4322",
     "build": "astro build",
-    "astro": "astro",
-    "wrangler": "wrangler"
+    "preview": "astro preview --host --port=4322",
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/react": "^4.4.2",
-    "@tabler/icons-react": "^3.36.1",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.6",
-    "marked": "^17.0.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "@astrojs/node": "^10.0.5",
+    "@astrojs/react": "^5.0.3",
+    "@tabler/icons-react": "^3.41.1",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.1.8",
+    "marked": "^18.0.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3",
+    "vite": "^7.3.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^25.0.9",
-    "@types/react": "^19.2.8",
-    "@types/react-dom": "^19.2.3",
-    "wrangler": "^4.59.3"
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
   }
 }
