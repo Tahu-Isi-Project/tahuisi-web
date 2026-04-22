@@ -16,7 +16,15 @@ const links: FooterLinks[] = footerLinks;
   <div class="h-5 bg-[#FFC4C4]" />
   <div class="h-fit bg-[#EE6983] text-[1vw]">
     <div class="flex justify-center py-5">
-      <Image src={tahuIsiLogo} alt="Tahu Isi Logo" height={100} />
+      <Image 
+        src={tahuIsiLogo} 
+        alt="Tahu Isi Logo" 
+        height={100} 
+        quality="low"
+        format="webp"
+        loading="eager"
+        decoding="async"
+      />
     </div>
     <div class="flex w-full h-full space-x-5 justify-center-safe align-middle">
       {
@@ -30,11 +38,12 @@ const links: FooterLinks[] = footerLinks;
         ))
       }
     </div>
-    <div class="flex justify-center py-5 text-[0.6vw]">
+    <div class="flex justify-center text-center py-5 text-[0.6vw]">
       © Tahu Isi Project is a derivative work of Touhou Project
     </div>
-    <div class="flex justify-center pb-5 text-[0.5vw]">
-      Website made by Ryhun, Baumkuchen, UnknownRori, Akarui, Meeno, and Ars
+    <div class="flex justify-center text-center pb-5 text-[0.5vw]">
+      Website made by Ryhun, Baumkuchen, UnknownRori, Akarui, Meeno, Ars, and Azai. <br>
+      Developed with Astro Framework.
     </div>
   </div>
 </footer>
