@@ -9,7 +9,8 @@ interface IconButtonProps {
 
 const IconButton = ({ icon: Icon, size = 24, className = "", onClick }: IconButtonProps) => (
   <button
-    onClick={onClick}
+    type="button"
+    onClick={() => onClick?.()}
     className={`p-2 bg-white border border-slate-300 rounded-full shadow hover:bg-slate-50 transition-colors ${className} cursor-pointer`}
   >
     <Icon size={size} />
