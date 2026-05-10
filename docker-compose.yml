@@ -1,0 +1,10 @@
+services:
+  tahuisi-web:
+    container_name: tahuisi-web
+    image: tahuisi-web:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4321:4321
+    init: true

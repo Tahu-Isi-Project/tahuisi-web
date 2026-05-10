@@ -28,6 +28,4 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-package-lock.json
-
 worker-configuration.d.ts
