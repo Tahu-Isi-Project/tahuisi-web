@@ -6,6 +6,7 @@ import SliderSection from "@features/index/components/SliderSection.astro";
 import HeadlinesSection from "@features/index/components/HeadlinesSection.astro";
 import CalendarSection from "@features/index/components/CalendarSection.astro";
 
+Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=3600, stale-while-revalidate=60'); 
 ---
 
 <Layout title="Home">
