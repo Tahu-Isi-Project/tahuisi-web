@@ -1,4 +1,5 @@
 ---
+import getThumbHashUrl from "@root/src/common/utils/thumbhash";
 import Prose from "@root/src/features/article/components/Prose.astro";
 import Layout from "@root/src/layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
@@ -54,11 +55,13 @@ marked.setOptions({
 
 const articleContent = await marked.parse(article.body);
 
-Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=3600, stale-while-revalidate=60'); 
+const placeholderImgUrl = article.thumbhash ? getThumbHashUrl(article.thumbhash) : "";
+
+Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=3600, stale-while-revalidate=60');
 ---
 
 <Layout title={articleData.article.title}>
-  <article class="max-w-6xl mx-auto px-6 py-12">
+  <article class="max-w-1/2 mx-auto px-6 py-12">
     <header class="mb-12">
       <h1
         title={articleData.article.title}
@@ -67,9 +70,7 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=3600, 
         {articleData.article.title}
       </h1>
 
-      <div
-        class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-slate-500 border-b border-slate-200 pb-8"
-      >
+      <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-slate-500 border-b border-slate-200 pb-12">
         <address class="not-italic font-semibold text-slate-900">
           By {authorNames}
         </address>
@@ -91,17 +92,24 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=3600, 
         }
       </div>
 
-      <div class="overflow-hidden rounded-2xl shadow-lg mb-8">
+      <div class="relative aspect-2/1 overflow-hidden rounded-2xl shadow-lg mb-8 bg-gray-100">
+        <img 
+          src={placeholderImgUrl} 
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
         <Image
           src={article.rawThumbnailSrc || ""}
           alt={article.thumbnailAlt}
-          width={1500}
-          height={300}
-          class="w-full max-h-[50vh] h-auto object-cover transition-transform duration-500 hover:scale-105"
+          width={1600}
+          height={500}
+          class="relative z-10 w-full max-h-[50vh] h-auto object-cover transition-all duration-500 opacity-0 hover:scale-105"
           format="webp"
           quality="low"
           loading="lazy"
           decoding="async"
+          onload="this.classList.remove('opacity-0')"
         />
       </div>
     </header>
