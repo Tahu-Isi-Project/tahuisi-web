@@ -13,7 +13,7 @@ export const newsHeadlineSchema = z.array(z.object({
   thumbhash: z.nullable(z.string()),
 }));
 
-const url = `${process.env.BE_ENDPOINT}/article/headlines`;
+const url = `${process.env.BE_ENDPOINT}/article`;
 
 const res = await fetch(url, {
   method: "GET",
